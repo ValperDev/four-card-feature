@@ -1,5 +1,102 @@
+:root {
+    --blue: hsl(212, 86%, 64%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --soft-dark-blue: hsla(234, 12%, 34%, 20%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+body {
+    background-color: var(--very-light-gray);
+    color: var(--very-dark-blue);
+    min-height: 100dvh;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+}
+
+ul {
+    list-style: none;
+}
+
+.content-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 70rem;
+}
+
+.content-block__list {
+    display: grid;
+    gap: 1.5em;
+    grid-template-areas: 
+        ". item2 ."
+        "item1 item2 item4"
+        "item1 item3 item4"
+        ". item3 .";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.content-block__item {
+    border-radius: 8px;
+    box-shadow: 0 0  15px var(--soft-dark-blue);
+    background-color: var(--white);
+    padding: 2em;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-block__item:nth-child(1) {
+    grid-area: item1;
+}
+
+.content-block__item:nth-child(2) {
+    grid-area: item2;
+}
+
+.content-block__item:nth-child(3) {
+    grid-area: item3;
+}
+
+.content-block__item:nth-child(4) {
+    grid-area: item4;
+}
+
+.content-block__border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+}
+
+.content-block__item:nth-child(1) .content-block__border {
+    background-color: var(--cyan);
+}
+
+.content-block__item:nth-child(2) .content-block__border {
+    background-color: var(--red);
+}
+
+.content-block__item:nth-child(3) .content-block__border {
+    background-color: var(--orange);
+}
+
+.content-block__item:nth-child(4) .content-block__border {
+    background-color: var(--blue);
 }
