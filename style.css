@@ -10,6 +10,24 @@
     --white: hsl(0, 0%, 100%);
 }
 
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -19,6 +37,8 @@
 body {
     background-color: var(--very-light-gray);
     color: var(--very-dark-blue);
+    font-family: "Poppins", sans-serif;
+    font-size: 0.938rem;
     min-height: 100dvh;
 }
 
@@ -33,6 +53,11 @@ ul {
     list-style: none;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
 .content-block {
     display: flex;
     flex-direction: column;
@@ -40,9 +65,28 @@ ul {
     max-width: 70rem;
 }
 
+.content-block__title {
+    font-size: 2.2em;
+    font-weight: 200;
+    line-height: 1.4;
+    padding-bottom: .4em;
+}
+
+.content-block__subtitle {
+    display: block;
+    font-weight: 600;
+}
+
+.content-block__description {
+    font-weight: 200;
+    text-align: center;
+    padding-bottom: 3.5em;
+    max-width: 56ch;
+}
+
 .content-block__list {
     display: grid;
-    gap: 1.5em;
+    gap: 1.8em;
     grid-template-areas: 
         ". item2 ."
         "item1 item2 item4"
@@ -53,6 +97,9 @@ ul {
 }
 
 .content-block__item {
+    display: flex;
+    flex-direction: column;
+    gap: .6em;
     border-radius: 8px;
     box-shadow: 0 0  15px var(--soft-dark-blue);
     background-color: var(--white);
@@ -99,4 +146,18 @@ ul {
 
 .content-block__item:nth-child(4) .content-block__border {
     background-color: var(--blue);
+}
+
+.content-block__item-title {
+    font-size: 1.4em;
+}
+
+.content-block__item-description {
+    font-size: .9em;
+    font-weight: 200;
+    line-height: 1.6;
+}
+
+.content-block__item-icon {
+    align-self: flex-end;
 }
